@@ -22,28 +22,7 @@ def assign_val():
   }
   return m_data
 
-@app.route("/movies")
-def get_movie():
-  #Trará o primeiro filme disponivel na lista
-  movie_data = assign_val()
 
-  return jsonify({
-    "data": movie_data,
-    "status": "success"
-  })
-
-@app.route("/like")
-def liked_movie():
-  global all_movies
-  movie_data = assign_val()
-  liked_movies.append(movie_data)
-  print("gostei", liked_movies)
-  all_movies.drop([0], inplace=True)
-  all_movies = all_movies.reset_index(drop=True)
-
-  return jsonify({
-    "status": "success"
-  })
 
 
 
